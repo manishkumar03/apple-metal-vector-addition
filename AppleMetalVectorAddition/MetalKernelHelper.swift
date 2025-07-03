@@ -104,7 +104,8 @@ class MetalKernelHelper {
         }
 
         // Define how many threads each threadgroup will contain (1D layout). Here is set to 32 which is common warp size
-        // on GPUs, thus makeing the execution highly performant.
+        // on GPUs, thus makeing the execution highly performant. Notice the height being set to 1. Since our input data is linear, it
+        // makes sense to have our threadgroups be linear too.
         let threadgroupSize = MTLSize(width: threadsPerGroup, height: 1, depth: 1)
 
         // Compute the number of threadgroups needed to cover the total thread count.
