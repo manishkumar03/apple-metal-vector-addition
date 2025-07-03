@@ -18,7 +18,7 @@ It includes two core classes:
 
 	It handles:
  	* 	Input array preparation (two [Float] arrays)
- 	* 	Buffer creation and constant encoding
+ 	* 	Data loading into GPU buffers
  	*  Invoke the Metal kernel for execution
  	* 	Timing the kernel execution
  	* 	Reading back the results into a Swift array
