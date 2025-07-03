@@ -7,6 +7,16 @@
 
 import Metal
 
+/// A utility class that simplifies the setup and execution of Metal compute kernels. It abstracts away the boilerplate required to
+/// actually dispatch the Metal kernel for execution.
+///
+/// ### Features:
+/// - Automatically compiles a named kernel function at initialization
+/// - Provides convenient methods for:
+///   - Creating GPU buffers from Swift arrays (`makeBuffer`)
+///   - Creating empty buffers for outputs (`emptyBuffer`)
+///   - Uploading constant/uniform values (`makeConstant`)
+///   - Dispatching kernels with configurable threadgroup sizes (`dispatchThreadgroups`)
 class MetalKernelHelper {
     let device: MTLDevice
     let pipeline: MTLComputePipelineState

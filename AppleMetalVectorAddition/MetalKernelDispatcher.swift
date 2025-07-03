@@ -8,6 +8,12 @@
 import UIKit
 import Metal
 
+/// `MetalKernelDispatcher` encapsulates the end-to-end process of running a Metal kernel that adds two arrays.
+/// It manages data preparation, buffer creation, parameter encoding, kernel dispatch, GPU timing, and result extraction.
+///
+/// - Returns: A tuple containing:
+///   - A formatted string of the kernel execution time in milliseconds
+///   - A `[Float]` array of the result computed on the GPU (i.e., element-wise sum of two input arrays)
 class MetalKernelDispatcher {
 
     /// Execute a simple GPU compute operation using Metal to add two arrays of floats.
