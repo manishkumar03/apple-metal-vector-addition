@@ -1,10 +1,12 @@
 # Apple Metal - Vector Addition Demo
 
-This project is the "Hello, World" of GPU compute programming. It demonstrates how to add two arrays of length N by taking advantage of GPU parallelism, where each of the N threads is responsible for adding a pair of elements.
+This iOS project is the "Hello, World" of GPU compute programming. It demonstrates how to add two arrays of length N by taking advantage of GPU parallelism, where each of the N threads is responsible for adding a pair of elements.
 
 This repository is a minimal, educational example that demonstrates how to use Apple's Metal framework for GPU programming in Swift. It's designed to help you understand the full end-to-end pipeline of compute programming with Metal in a real Swift app. It shows how to prepare data on the CPU, send it to the GPU, run a Metal kernel, and read back the results.
 
 The code includes **extensive inline comments** explaining the functioning of each step and the design choices made.
+
+## Core Functionality
 
 The project includes two core classes:
 
@@ -37,6 +39,10 @@ The projet shows how to:
 - Transfer data between CPU and GPU using Metal buffers
 - Dispatch GPU workloads with `dispatchThreadGroups`
 - Get results back from the GPU
+
+## Run Requirements
+* 	This is an iOS project so you'd need an Apple Mac to run it
+* 	Xcode with Metal support
 
 ### License
 
