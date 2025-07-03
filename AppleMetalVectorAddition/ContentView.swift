@@ -18,7 +18,7 @@ struct ContentView: View {
                 .foregroundColor(.primary)
 
             Button(action: {
-                (self.kernelExecutionTimeString, self.result)  = MetalKernelDispatcher().executeMetalKernel()
+                (self.kernelExecutionTimeString, self.result) = MetalKernelDispatcher().executeMetalKernel()
             }) {
                 Label("Run Kernel", systemImage: "bolt.fill")
                     .frame(maxWidth: .infinity)

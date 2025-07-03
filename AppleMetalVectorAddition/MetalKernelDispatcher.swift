@@ -11,17 +11,21 @@ import Metal
 /// `MetalKernelDispatcher` encapsulates the end-to-end process of running a Metal kernel that adds two arrays.
 /// It manages data preparation, buffer creation, parameter encoding, kernel dispatch, GPU timing, and result extraction.
 ///
-/// - Returns: A tuple containing:
-///   - A formatted string of the kernel execution time in milliseconds
-///   - A `[Float]` array of the result computed on the GPU (i.e., element-wise sum of two input arrays)
 class MetalKernelDispatcher {
 
     /// Execute a simple GPU compute operation using Metal to add two arrays of floats.
     /// This function demonstrates the full end-to-end workflow of compute programming with Metal - from buffer creation and
     /// parameter encoding to kernel dispatch and result extraction.
+    ///
+    /// - Returns: A tuple containing:
+    ///   - A formatted string of the kernel execution time in milliseconds
+    ///   - A `[Float]` array of the result computed on the GPU (i.e., element-wise sum of two input arrays)
     func executeMetalKernel() -> (String, [Float]) {
         do {
+            // function name given here must match the kernel function name in the `*.metal` file. Note that the physical filename for the `.metal`
+            // file does not matter.
             let metalKernelHelper = try MetalKernelHelper(functionName: "vector_add")
+
             let count = 1024_000
             let A = Array(0..<count).map { Float($0) }
             let B = Array(0..<count).map { Float($0 * 10) }
